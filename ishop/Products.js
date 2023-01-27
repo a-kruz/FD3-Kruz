@@ -25,7 +25,7 @@ var Products = React.createClass({
   render: function() {
 
     var productsListHead = this.props.listHead.map(item => 
-      React.DOM.td({key: item.code}, item.title)
+      React.DOM.th({key: item.code}, item.title)
     );
 
     var productsList = this.props.list.map(item => 
@@ -44,7 +44,9 @@ var Products = React.createClass({
       {className: 'Products'},
       React.DOM.h1({className: 'Products__title'}, this.props.title),
       React.DOM.table({className: 'Products__table'},
-        React.DOM.thead({className: 'Products__thead'}, productsListHead),
+        React.DOM.thead({className: 'Products__thead'}, 
+          React.DOM.tr(null, productsListHead),
+        ),
         React.DOM.tbody({className: 'Products__tbody'}, productsList),
       ),
     );
