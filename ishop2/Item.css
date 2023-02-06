@@ -1,0 +1,23 @@
+.Item:nth-child(odd) {
+    background-color: #f4fdff;
+}
+
+.Item:hover {
+    background-color: #ebfbff;
+    transition: .3s;
+}
+
+.Item.active {
+    background: #ffb793;
+}
+
+.Item__img {
+    display: flex;
+    justify-content: center;
+}
+
+.Item__img img {
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+}

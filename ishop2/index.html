@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iShop</title>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="Shop.js"></script>
+    <link rel="stylesheet" href="Shop.css">
+    <script src="Item.js"></script>
+    <link rel="stylesheet" href="Item.css">
+
+    <script>
+        var shopTitle = 'Интернет-магазин техники iShop';
+        var shopCurrency = ' руб.';
+        var itemRemoveText = 'Удалить';
+        var shopListHead = [
+            {code: 1, title: 'Артикул'},
+            {code: 2, title: 'Наименование'},
+            {code: 3, title: 'Цена'},
+            {code: 4, title: 'Изображение'},
+            {code: 5, title: 'Остаток на складе'},
+            {code: 6, title: 'Действия'},
+        ];
+        var shopList = [
+            {code: '0101', title: 'Стиральные машины', price: 99.99, imgUrl: 'img/1.jpg', stock: 10},
+            {code: '0102', title: 'Наушники', price: 199.99, imgUrl: 'img/2.jpg', stock: 15},
+            {code: '0103', title: 'Телевизоры', price: 259.99, imgUrl: 'img/3.jpg', stock: 190},
+            {code: '0104', title: 'Часы', price: 59.99, imgUrl: 'img/4.jpg', stock: 12},
+            {code: '0105', title: 'Компьютеры', price: 349.99, imgUrl: 'img/5.jpg', stock: 4},
+            {code: '0106', title: 'Мобильные телефоны', price: 289.99, imgUrl: 'img/6.jpg', stock: 7},
+        ];
+        
+        ReactDOM.render(
+            React.createElement(Shop, {
+                title: shopTitle, 
+                currency: shopCurrency, 
+                listHead: shopListHead, 
+                list: shopList,
+                removeText: itemRemoveText,
+            }),
+            document.getElementById('container')
+        );
+    </script>
+
+</body>
+</html>
