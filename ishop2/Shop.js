@@ -58,7 +58,7 @@ var Shop = React.createClass({
         stock: item.stock,
         itemClicked: this.itemClicked,
         itemRemoved: this.itemRemoved,
-        selectedItemCode: (this.state.selectedItemCode == item.code) ? true : false,
+        isSelectedItem: (this.state.selectedItemCode == item.code) ? true : false,
       })
     );
 

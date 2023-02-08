@@ -11,22 +11,22 @@ var Item = React.createClass({
     stock: React.PropTypes.number.isRequired,
     itemClicked: React.PropTypes.func.isRequired,
     itemRemoved: React.PropTypes.func.isRequired,
-    selectedItemCode: React.PropTypes.bool,
+    isSelectedItem: React.PropTypes.bool,
+  },
+
+  itemRemoved: function(EO) {
+    this.props.itemRemoved(this.props.code);
   },
 
   itemClicked: function(EO) {
-    if (EO.target.classList.contains('remove')) {
-      this.props.itemRemoved(EO.target.closest('.Item').dataset.code);
-    } else {
-      this.props.itemClicked(EO.target.closest('.Item').dataset.code);
-    }
+    if (EO.target.value !== 'remove')
+      this.props.itemClicked(this.props.code);
   },
 
   render: function() {
 
     return React.DOM.tr({
-        className: 'Item' + (this.props.selectedItemCode ? ' active' : ''),
-        'data-code': this.props.code,
+        className: 'Item' + (this.props.isSelectedItem ? ' active' : ''),
         onClick: this.itemClicked,
       },
       React.DOM.td({className: 'Item__code'}, this.props.code),
@@ -37,7 +37,11 @@ var Item = React.createClass({
       ),
       React.DOM.td({className: 'Item__stock'}, this.props.stock),
       React.DOM.td({className: 'Item__cotroll'}, 
-        React.DOM.button({className: 'remove'}, this.props.removeText)
+        React.DOM.button({
+          className: 'remove',
+          value: 'remove',
+          onClick: this.itemRemoved,
+        }, this.props.removeText)
       ),
     );
   },
