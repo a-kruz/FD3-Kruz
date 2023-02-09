@@ -16,11 +16,11 @@ var Item = React.createClass({
 
   itemRemoved: function(EO) {
     this.props.itemRemoved(this.props.code);
+    EO.stopPropagation();
   },
 
   itemClicked: function(EO) {
-    if (EO.target.value !== 'remove')
-      this.props.itemClicked(this.props.code);
+    this.props.itemClicked(this.props.code);
   },
 
   render: function() {
@@ -39,7 +39,6 @@ var Item = React.createClass({
       React.DOM.td({className: 'Item__cotroll'}, 
         React.DOM.button({
           className: 'remove',
-          value: 'remove',
           onClick: this.itemRemoved,
         }, this.props.removeText)
       ),
