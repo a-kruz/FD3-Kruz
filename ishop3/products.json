@@ -1,0 +1,8 @@
+[
+    {"code": 1, "title": "Стиральные машины", "price": 99.99, "url": "http://test.test/img/1.jpg", "stock": 10},
+    {"code": 2, "title": "Наушники", "price": 199.99, "url": "http://test.test/img/2.jpg", "stock": 15},
+    {"code": 3, "title": "Телевизоры", "price": 259.99, "url": "http://test.test/img/3.jpg", "stock": 190},
+    {"code": 4, "title": "Часы", "price": 59.99, "url": "http://test.test/img/4.jpg", "stock": 12},
+    {"code": 5, "title": "Компьютеры", "price": 349.99, "url": "http://test.test/img/5.jpg", "stock": 4},
+    {"code": 6, "title": "Мобильные телефоны", "price": 289.99, "url": "http://test.test/img/6.jpg", "stock": 7}
+]
